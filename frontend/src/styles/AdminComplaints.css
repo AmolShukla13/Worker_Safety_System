@@ -1,0 +1,225 @@
+.admin-complaints{
+    padding:30px;
+    background:var(--color-bg);
+    min-height:100vh;
+}
+
+.complaints-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.complaints-header h1{
+    font-size:32px;
+    color:var(--color-text);
+}
+
+/* Summary cards */
+
+.complaints-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin:25px 0;
+}
+
+.complaint-card{
+    background:var(--color-surface);
+    border-radius:var(--radius-lg);
+    padding:20px;
+    text-align:center;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    border-top:3px solid var(--color-accent);
+}
+
+.complaint-card:hover{
+    transform:translateY(-5px);
+}
+
+.complaint-card h3{
+    margin-bottom:10px;
+    color:var(--color-text-muted);
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+
+.complaint-card span{
+    font-family:var(--font-mono);
+    font-size:28px;
+    font-weight:700;
+    color:var(--color-primary);
+}
+
+/* Search + download row */
+
+.complaints-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin:20px 0 25px;
+}
+
+.complaints-search{
+    flex:1;
+}
+
+.complaints-search input{
+    width:100%;
+    max-width:450px;
+    padding:12px 18px;
+    border:1px solid transparent;
+    border-radius:var(--radius-md);
+    background:var(--color-surface);
+    font-size:15px;
+    outline:none;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+    color:var(--color-text);
+}
+
+.complaints-search input:focus{
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px var(--color-primary-soft);
+}
+
+.pdf-btn{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    border:none;
+    padding:12px 22px;
+    border-radius:var(--radius-md);
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    white-space:nowrap;
+    box-shadow:0 5px 15px rgba(27,58,92,.25);
+    transition:var(--transition);
+}
+
+.pdf-btn:hover{
+    background:var(--color-primary-dark);
+    transform:translateY(-2px);
+}
+
+/* Table */
+
+.complaints-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--color-surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-md);
+}
+
+.complaints-table th{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+}
+
+.complaints-table td{
+    padding:15px;
+    border-bottom:1px solid var(--color-border);
+}
+
+.complaints-table tr:hover{
+    background:var(--color-bg);
+}
+
+.pending{
+    color:var(--color-warning);
+    font-weight:600;
+}
+
+.resolved{
+    color:var(--color-success);
+    font-weight:600;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.status.pending{
+    background:var(--color-warning-soft);
+    color:var(--color-warning);
+}
+
+.status.in-progress{
+    background:var(--color-primary-soft);
+    color:var(--color-primary-dark);
+}
+
+.status.resolved{
+    background:var(--color-success-soft);
+    color:var(--color-success);
+}
+
+/* Action buttons */
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.action-buttons .resolve-btn,
+.action-buttons .delete-btn{
+    width:120px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0 16px;
+    border:none;
+    border-radius:var(--radius-sm);
+    font-size:14px;
+    font-weight:600;
+    margin:0;
+    box-sizing:border-box;
+    cursor:pointer;
+    transition:var(--transition);
+    color:var(--color-surface);
+}
+
+.action-buttons .resolve-btn{
+    background:var(--color-success);
+}
+
+.action-buttons .resolve-btn:hover{
+    filter:brightness(.92);
+}
+
+.action-buttons .delete-btn{
+    background:var(--color-danger);
+}
+
+.action-buttons .delete-btn:hover{
+    background:var(--color-danger-dark);
+}

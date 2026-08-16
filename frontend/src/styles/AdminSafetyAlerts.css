@@ -1,0 +1,104 @@
+.admin-alerts{
+    padding:30px;
+    background:var(--color-bg);
+    min-height:100vh;
+}
+
+.admin-alerts h1{
+    margin-bottom:25px;
+    color:var(--color-dark);
+}
+
+.alert-form{
+    background:var(--color-surface);
+    padding:25px;
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    margin-bottom:30px;
+    border-top:3px solid var(--color-accent);
+}
+
+.alert-form input,
+.alert-form textarea,
+.alert-form select{
+    width:100%;
+    margin-bottom:18px;
+    padding:14px;
+    border:1px solid var(--color-border-strong);
+    border-radius:var(--radius-sm);
+    font-size:15px;
+    background:var(--color-surface);
+    color:var(--color-text);
+    transition:var(--transition);
+}
+
+.alert-form input:focus,
+.alert-form textarea:focus,
+.alert-form select:focus{
+    outline:none;
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px var(--color-primary-soft);
+}
+
+.alert-form textarea{
+    height:120px;
+    resize:none;
+}
+
+.alert-form button{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    border:none;
+    padding:14px 22px;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.alert-form button:hover{
+    background:var(--color-primary-dark);
+}
+
+.alerts-table{
+    width:100%;
+    background:var(--color-surface);
+    border-collapse:collapse;
+    box-shadow:var(--shadow-md);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+}
+
+.alerts-table th{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+}
+
+.alerts-table td{
+    padding:15px;
+    border-bottom:1px solid var(--color-border);
+}
+
+.alerts-table tr:hover{
+    background:var(--color-bg);
+}
+
+.delete-btn{
+    background:var(--color-danger);
+    color:var(--color-surface);
+    border:none;
+    padding:8px 14px;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.delete-btn:hover{
+    background:var(--color-danger-dark);
+}

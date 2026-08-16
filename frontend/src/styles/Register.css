@@ -1,0 +1,216 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:var(--font-family);
+}
+
+.register-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--color-bg);
+    padding:30px;
+}
+
+.register-box{
+    width: 480px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid var(--color-accent);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: fadeUp .7s ease;
+}
+
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(30px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.register-box h1{
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-family: var(--font-display);
+}
+
+.register-box p.subtitle{
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.role-select-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.role-label {
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.role-select {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.role-select:focus {
+    border-color: var(--color-accent);
+    background: #ffffff;
+}
+
+.role-select option {
+    background: #ffffff;
+    color: #1e293b;
+}
+
+.register-box input{
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.register-box input::placeholder{
+    color: #94a3b8;
+}
+
+.register-box input:focus{
+    border-color: var(--color-accent);
+    background: #ffffff;
+}
+
+.register-box button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.register-box button:hover{
+    background: #c07419;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(217, 131, 36, .15);
+}
+
+.register-box .bottom-text{
+    text-align: center;
+    margin-top: 22px;
+    color: #4b5563;
+}
+
+.register-box a{
+    color:var(--color-accent);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.register-box a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:500px){
+    .register-box{
+        width:100%;
+        padding:30px;
+    }
+}
+
+/* =======================================
+   DARK THEME OVERRIDES
+   ======================================= */
+
+body.dark-theme .register-container {
+    background: transparent;
+}
+
+body.dark-theme .register-box {
+    background: var(--color-surface);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: var(--shadow-lg);
+}
+
+body.dark-theme .register-box h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+body.dark-theme .register-box p.subtitle {
+    color: var(--color-text-muted);
+}
+
+body.dark-theme .role-label {
+    color: #a5b4fc;
+}
+
+body.dark-theme .role-select {
+    background: rgba(6, 9, 19, 0.6);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #fff;
+}
+
+body.dark-theme .role-select option {
+    background: #0d0822;
+    color: #fff;
+}
+
+body.dark-theme .register-box input {
+    background: rgba(6, 9, 19, 0.6);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #fff;
+}
+
+body.dark-theme .register-box input::placeholder {
+    color: #64748b;
+}
+
+body.dark-theme .register-box input:focus,
+body.dark-theme .role-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+    background: rgba(6, 9, 19, 0.85);
+}
+
+body.dark-theme .register-box button {
+    background: linear-gradient(135deg, var(--color-accent), #c07419);
+    box-shadow: 0 4px 14px rgba(255, 145, 0, 0.3);
+}
+
+body.dark-theme .register-box button:hover {
+    background: linear-gradient(135deg, #ffaa33, #d98324);
+    box-shadow: 0 4px 18px rgba(255, 145, 0, 0.4);
+}
+
+body.dark-theme .register-box .bottom-text {
+    color: #cbd5e1;
+}

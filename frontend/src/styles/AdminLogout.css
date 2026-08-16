@@ -1,0 +1,71 @@
+.admin-logout-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:var(--color-bg);
+}
+
+.logout-card{
+    width:450px;
+    background:var(--color-surface);
+    padding:40px;
+    border-radius:var(--radius-xl);
+    text-align:center;
+    box-shadow:var(--shadow-lg);
+    border-top:4px solid var(--color-accent);
+}
+
+.logout-icon{
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.logout-card h1{
+    font-size:34px;
+    color:var(--color-text);
+    margin-bottom:15px;
+}
+
+.logout-card p{
+    color:var(--color-text-muted);
+    font-size:17px;
+    line-height:28px;
+    margin-bottom:35px;
+}
+
+.logout-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.cancel-btn{
+    background:var(--color-text-muted);
+    color:var(--color-surface);
+    border:none;
+    padding:14px 30px;
+    border-radius:var(--radius-md);
+    cursor:pointer;
+    font-size:16px;
+    transition:var(--transition);
+}
+
+.cancel-btn:hover{
+    background:var(--color-border-strong);
+}
+
+.logout-btn{
+    background:var(--color-danger);
+    color:var(--color-surface);
+    border:none;
+    padding:14px 30px;
+    border-radius:var(--radius-md);
+    cursor:pointer;
+    font-size:16px;
+    transition:var(--transition);
+}
+
+.logout-btn:hover{
+    background:var(--color-danger-dark);
+}

@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0f12;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: var(--color-bg);
+    position: relative;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+body.dark-theme .login-page::before {
+    background: transparent;
+}
+
+.login-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8vh;
+}
+
+.login-header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.login-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.8);
+    letter-spacing: 1px;
+}
+
+.login-header h1 .red-text {
+    color: #FF3B30;
+    text-shadow: 0 0 12px rgba(255, 59, 48, 0.4), 2px 3px 6px rgba(0,0,0,0.9);
+}
+
+.login-header p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.login-box-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    padding-right: 0;
+}
+
+.login-box {
+    width: 420px;
+    background: #0d0f12; /* Darker solid color with some transparency */
+    background: rgba(13, 15, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 35px 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .login-box {
+    background: var(--color-surface);
+}
+
+.login-box h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.role-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.role-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 8px;
+    background: #171b21;
+    border: 1px solid #2a303a;
+    border-radius: 6px;
+    color: #8c929d;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-btn:hover {
+    color: #fff;
+    border-color: #5b6575;
+}
+
+.role-btn.active {
+    background: linear-gradient(135deg, #1b3a5c, #2563eb);
+    border-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background: #171b21;
+    border: 1px solid #2a303a;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.input-group:focus-within {
+    border-color: #5b6575;
+}
+
+.input-icon {
+    color: #8c929d;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 14px 15px 14px 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #8c929d;
+}
+
+.toggle-password {
+    background: transparent;
+    border: none;
+    color: #8c929d;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password:hover {
+    color: #fff;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    color: #8c929d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #8c929d;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #d62d20, #731309);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(115, 19, 9, 0.4);
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to bottom, #e3382b, #8b170a);
+}
+
+.login-btn:active {
+    transform: translateY(1px);
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #2a303a;
+}
+
+.footer-link {
+    color: #8c929d;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+.footer-link svg {
+    color: #fff;
+}
+
+body.dark-theme .role-btn {
+    background: rgba(6, 9, 19, 0.6);
+    border-color: rgba(0, 240, 255, 0.15);
+    color: #9ca3af;
+}
+
+body.dark-theme .role-btn:hover {
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+body.dark-theme .role-btn.active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(37, 99, 235, 0.35));
+    border-color: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+}
+
+body.dark-theme .input-group {
+    background: rgba(6, 9, 19, 0.6);
+    border-color: rgba(0, 240, 255, 0.15);
+}
+
+body.dark-theme .input-group:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+body.dark-theme .login-btn {
+    background: linear-gradient(135deg, #00f3ff, #bd00ff);
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.4);
+    border: none;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .login-btn:hover {
+    background: linear-gradient(135deg, #00f3ff, #e026ff);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+    transform: scale(1.02);
+}
+
+body.dark-theme .login-footer {
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+/* Modal overlay styling */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-modal {
+    background: rgba(22, 27, 34, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 440px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: left;
+    animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.login-modal h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    color: #ff9f00;
+}
+
+.login-modal .modal-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+}
+
+.login-modal .modal-item strong {
+    color: #cbd5e1;
+}
+
+.login-modal .modal-item span {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.login-modal ul {
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.login-modal ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+}
+
+.modal-close-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+    background: #1d4ed8;
+}

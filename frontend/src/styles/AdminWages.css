@@ -1,0 +1,278 @@
+.admin-wages{
+    padding:30px;
+    background:var(--color-bg);
+    min-height:100vh;
+}
+
+.wages-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.wages-header h1{
+    font-size:32px;
+    color:var(--color-text);
+}
+
+/* Search / filter row */
+
+.search-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.search-box select,
+.search-box input{
+    padding:12px 16px;
+    border-radius:var(--radius-md);
+    border:1px solid var(--color-border-strong);
+    outline:none;
+    font-size:15px;
+    background:var(--color-surface);
+    color:var(--color-text);
+    transition:var(--transition);
+}
+
+.search-box input{
+    width:350px;
+    padding:12px 18px;
+}
+
+.search-box select:focus,
+.search-box input:focus{
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 4px var(--color-primary-soft);
+}
+
+/* Add wage form */
+
+.worker-form{
+    background:var(--color-surface);
+    padding:30px;
+    border-radius:var(--radius-xl);
+    box-shadow:var(--shadow-md);
+    margin-bottom:30px;
+    border-top:3px solid var(--color-accent);
+}
+
+.form-title{
+    font-size:26px;
+    color:var(--color-primary);
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.form-grid div{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-grid label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--color-text);
+    font-size:15px;
+}
+
+.worker-form input,
+.worker-form select,
+.form-grid input,
+.form-grid select{
+    padding:14px 16px;
+    border:1px solid var(--color-border-strong);
+    border-radius:var(--radius-md);
+    outline:none;
+    font-size:15px;
+    transition:var(--transition);
+    background:var(--color-surface);
+    color:var(--color-text);
+    width:100%;
+    box-sizing:border-box;
+    margin-bottom:18px;
+}
+
+.worker-form input:focus,
+.worker-form select:focus,
+.form-grid input:focus,
+.form-grid select:focus{
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 4px var(--color-primary-soft);
+}
+
+.worker-form button,
+.add-wage-btn{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    border:none;
+    padding:13px 24px;
+    border-radius:var(--radius-md);
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.add-wage-btn{
+    margin-top:15px;
+    padding:14px 28px;
+    font-size:16px;
+}
+
+.worker-form button:hover,
+.add-wage-btn:hover{
+    background:var(--color-primary-dark);
+    transform:translateY(-2px);
+}
+
+@media(max-width:1000px){
+    .form-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:700px){
+    .form-grid{ grid-template-columns:1fr; }
+}
+
+/* Table */
+
+.wages-table{
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    background:var(--color-surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-md);
+}
+
+.wages-table th{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+}
+
+.wages-table td{
+    padding:15px;
+    border-bottom:1px solid var(--color-border);
+    font-size:15px;
+    vertical-align:middle;
+    font-variant-numeric:tabular-nums;
+}
+
+.wages-table td:last-child,
+.wages-table th:last-child{
+    white-space:nowrap;
+    width:180px;
+}
+
+.wages-table tr:hover{
+    background:var(--color-bg);
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.paid{
+    background:var(--color-success-soft);
+    color:var(--color-success);
+}
+
+.pending{
+    background:var(--color-warning-soft);
+    color:var(--color-warning);
+}
+
+.unpaid{
+    background:var(--color-danger-soft);
+    color:var(--color-danger-dark);
+}
+
+/* Action buttons */
+
+.action-buttons{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.edit-btn,
+.delete-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:var(--radius-sm);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:var(--transition);
+    color:var(--color-surface);
+}
+
+.edit-btn{
+    background:var(--color-primary);
+}
+
+.edit-btn:hover{
+    background:var(--color-primary-dark);
+    transform:translateY(-2px);
+}
+
+.delete-btn{
+    background:var(--color-danger);
+}
+
+.delete-btn:hover{
+    background:var(--color-danger-dark);
+    transform:translateY(-2px);
+}
+
+/* PDF button */
+
+.pdf-btn{
+    background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));
+    color:var(--color-surface);
+    border:none;
+    padding:12px 22px;
+    border-radius:var(--radius-md);
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:var(--transition);
+    box-shadow:0 8px 18px rgba(27,58,92,.25);
+}
+
+.pdf-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(27,58,92,.35);
+}

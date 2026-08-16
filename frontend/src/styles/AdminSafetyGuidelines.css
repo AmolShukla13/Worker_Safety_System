@@ -1,0 +1,110 @@
+.admin-guidelines{
+    padding:30px;
+    background:var(--color-bg);
+    min-height:100vh;
+}
+
+.download-btn{
+    margin-bottom:25px;
+    padding:12px 18px;
+    background:var(--color-primary);
+    color:var(--color-surface);
+    border:none;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    font-size:15px;
+    transition:var(--transition);
+}
+
+.download-btn:hover{
+    background:var(--color-primary-dark);
+}
+
+.guideline-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    background:var(--color-surface);
+    padding:25px;
+    border-radius:var(--radius-lg);
+    margin-bottom:30px;
+    box-shadow:var(--shadow-md);
+    border-top:3px solid var(--color-accent);
+}
+
+.guideline-form input,
+.guideline-form textarea,
+.guideline-form select{
+    padding:14px;
+    font-size:15px;
+    border:1px solid var(--color-border-strong);
+    border-radius:var(--radius-sm);
+    background:var(--color-surface);
+    color:var(--color-text);
+    transition:var(--transition);
+}
+
+.guideline-form input:focus,
+.guideline-form textarea:focus,
+.guideline-form select:focus{
+    outline:none;
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px var(--color-primary-soft);
+}
+
+.guideline-form textarea{
+    height:140px;
+}
+
+.guideline-form button{
+    padding:14px;
+    background:var(--color-primary);
+    color:var(--color-surface);
+    border:none;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.guideline-form button:hover{
+    background:var(--color-primary-dark);
+}
+
+.guideline-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--color-surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-md);
+}
+
+.guideline-table th{
+    background:var(--color-primary);
+    color:var(--color-surface);
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+}
+
+.guideline-table td{
+    padding:15px;
+    border-bottom:1px solid var(--color-border);
+}
+
+.delete-btn{
+    background:var(--color-danger);
+    color:var(--color-surface);
+    border:none;
+    padding:8px 14px;
+    border-radius:var(--radius-sm);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.delete-btn:hover{
+    background:var(--color-danger-dark);
+}

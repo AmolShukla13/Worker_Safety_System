@@ -1,0 +1,491 @@
+.admin-navbar{
+height:80px;
+background:#ffffff !important;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 35px;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+border-bottom:1px solid #e2e8f0;
+position:sticky;
+top:0;
+z-index:99999;
+}
+
+.title-box h2{
+margin:0;
+font-size:34px;
+font-weight:800;
+background:linear-gradient(90deg,var(--color-primary),#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+letter-spacing:.5px;
+}
+
+.title-box span{
+display:block;
+margin-top:4px;
+font-size:14px;
+color:var(--color-text-muted);
+font-weight:500;
+}
+
+.admin-right{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+.admin-profile{
+display:flex;
+align-items:center;
+gap:15px;
+padding:10px 18px;
+background:var(--color-bg);
+border-radius:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.admin-profile:hover{
+transform:translateY(-2px);
+}
+.avatar{
+width:60px;
+height:60px;
+overflow:hidden;
+background:linear-gradient(135deg,var(--color-primary),#06b6d4);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+.admin-profile h4{
+margin:0;
+font-size:19px;
+font-weight:700;
+color:var(--color-text);
+}
+
+.admin-profile p{
+margin:0;
+font-size:14px;
+font-weight:700;
+color:var(--color-success);
+}
+/* ===========================
+   Notification
+=========================== */
+
+.notification-wrapper{
+    position:relative;
+}
+
+.notification{
+    width:52px;
+    height:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--color-surface);
+    border-radius:50%;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    position:relative;
+}
+
+.notification:hover{
+    transform:translateY(-3px);
+    background:#eff6ff;
+}
+
+.badge{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--color-danger);
+    color:white;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.notification-box{
+
+    position:absolute;
+
+    top:75px;
+
+    right:-120px;
+
+    width:340px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    overflow:hidden;
+
+    z-index:100000;
+
+    animation:popup .25s ease;
+
+}
+
+.notification-box h4{
+
+    margin:0;
+
+    padding:15px 20px;
+
+    background:linear-gradient(135deg,var(--color-primary),#06b6d4);
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+.notification-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:16px 20px;
+    border-bottom:1px solid #eef2f7;
+    transition:.3s;
+}
+
+.notification-item:hover{
+    background:var(--color-bg);
+}
+
+.notification-item:last-child{
+    border-bottom:none;
+}
+
+.notification-content{
+    flex:1;
+}
+
+.notification-content strong{
+    display:block;
+    color:var(--color-text);
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.notification-content small{
+    color:var(--color-text-muted);
+    font-size:13px;
+}
+
+.delete-notification{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:10px;
+    background:var(--color-danger-soft);
+    color:var(--color-danger-dark);
+    cursor:pointer;
+    font-size:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
+}
+
+.delete-notification:hover{
+    background:var(--color-danger-dark);
+    color:white;
+    transform:scale(1.08);
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================
+   Profile Dropdown
+========================== */
+
+.admin-profile{
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-dropdown{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 240px;
+    background: var(--color-surface);
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    overflow: hidden;
+    z-index: 1000;
+    animation: profilePopup .25s ease;
+}
+
+.profile-item{
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-border-strong);
+    cursor: pointer;
+    transition: .3s;
+    border-bottom: 1px solid var(--color-bg);
+}
+
+.profile-item:last-child{
+    border-bottom: none;
+    color: var(--color-danger);
+}
+
+.profile-item:hover{
+    background: #eff6ff;
+    padding-left: 28px;
+}
+
+@keyframes profilePopup{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/* Profile Header */
+
+.profile-header{
+
+padding:25px;
+
+text-align:center;
+
+background:linear-gradient(135deg,var(--color-primary),#06b6d4);
+
+color:white;
+
+}
+
+.profile-avatar{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+margin:auto;
+
+margin-bottom:12px;
+
+}
+
+.profile-header h4{
+
+margin:0;
+
+font-size:18px;
+
+}
+
+.profile-header p{
+
+margin-top:6px;
+
+font-size:14px;
+
+opacity:.9;
+
+}
+
+.logout{
+
+color:var(--color-danger);
+
+font-weight:700;
+
+}
+body.dark-theme .admin-navbar{
+    background: rgba(12, 8, 32, 0.75) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .admin-profile{
+    background: rgba(6, 2, 20, 0.6) !important;
+    border: 1px solid rgba(0, 243, 255, 0.15);
+}
+
+body.dark-theme .notification{
+    background: rgba(6, 2, 20, 0.6) !important;
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    color: var(--color-primary);
+}
+
+body.dark-theme .notification:hover {
+    background: rgba(0, 243, 255, 0.1) !important;
+}
+
+body.dark-theme .notification-box {
+    background: rgba(12, 8, 32, 0.95);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(20px);
+}
+
+body.dark-theme .notification-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .notification-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================
+   Profile Dropdown Dark Mode
+========================== */
+
+body.dark-theme .profile-dropdown{
+    background: rgba(12, 8, 32, 0.95);
+    color: white;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(20px);
+}
+
+body.dark-theme .profile-item{
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .profile-item:hover{
+    background: rgba(0, 243, 255, 0.1);
+}
+
+body.dark-theme .profile-item:last-child{
+    border-bottom: none;
+}
+
+body.dark-theme .admin-profile h4 {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+body.dark-theme .admin-profile p {
+    color: #38bdf8 !important;
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.2);
+}
+
+body.dark-theme .title-box h2 {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.navbar-avatar-image{
+
+width:100%;
+
+height:100%;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+/* Sidebar toggle button (hamburger) styles */
+.sidebar-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-text);
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 0;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.sidebar-toggle-btn:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle-btn {
+        display: block;
+    }
+
+    .admin-navbar {
+        margin-left: 0 !important;
+        padding: 0 15px;
+        height: 70px;
+        width: 100% !important;
+    }
+
+    .title-box h2 {
+        font-size: 20px;
+    }
+
+    .title-box span {
+        display: none;
+    }
+
+    .admin-profile h4,
+    .admin-profile p {
+        display: none; /* Hide admin name and role on mobile header */
+    }
+
+    .admin-profile {
+        padding: 4px;
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+}

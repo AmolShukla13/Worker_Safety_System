@@ -1,0 +1,308 @@
+.admin-sidebar{
+    width:260px;
+    height:100vh;
+    background:linear-gradient(180deg,#081225,var(--color-dark));
+    position:fixed;
+    left:0;
+    top:0;
+    padding:25px 18px;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    overflow-x:hidden;
+    box-sizing:border-box;
+}
+
+.logo{
+    color:var(--color-surface);
+    font-size:34px;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.menu{
+    text-decoration:none;
+    color:#cbd5e1;
+    padding:15px 18px;
+    margin-bottom:12px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:17px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu:hover{
+    background:linear-gradient(90deg,var(--color-primary),#3b82f6);
+    color:var(--color-surface);
+    transform:translateX(6px);
+}
+
+.active{
+    background:linear-gradient(90deg,var(--color-primary),#3b82f6);
+    color:var(--color-surface);
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+}
+
+/* Divider */
+
+.admin-sidebar::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,.08);
+    margin-top:18px;
+}
+
+/* ================= Sidebar Footer ================= */
+
+.sidebar-footer{
+    margin-top:auto;
+    padding-top:20px;
+}
+
+.sidebar-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.sidebar-card h3{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.sidebar-card p{
+    margin:8px 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.worker-icon{
+    font-size:55px;
+    margin:18px 0 10px;
+    animation:float 3s ease-in-out infinite;
+}
+
+.sidebar-card h4{
+    margin-bottom:15px;
+    color:var(--color-surface);
+    font-size:16px;
+    line-height:24px;
+}
+
+.report-btn{
+    width:100%;
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    background:linear-gradient(90deg,var(--color-primary),#3b82f6);
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.report-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* ===== Sidebar Worker Image ===== */
+
+.sidebar-worker-image{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    display:block;
+    margin:20px auto;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes floatWorker{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* ===== Premium Sidebar Card ===== */
+
+.sidebar-card{
+    background:linear-gradient(180deg,#1e293b,var(--color-dark));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    color:var(--color-surface);
+    margin-top:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.sidebar-card h3{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.sidebar-card p{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.report-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:var(--color-primary);
+    color:var(--color-surface);
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.report-btn:hover{
+    background:var(--color-primary-dark);
+    transform:translateY(-2px);
+}
+
+/* Sidebar Scrollbar */
+
+.admin-sidebar::-webkit-scrollbar{
+    width:6px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:20px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover{
+    background:var(--color-primary);
+}
+
+body.dark-theme .admin-sidebar {
+    background: linear-gradient(180deg, #060214, #0d0822, var(--color-primary-dark));
+    border-right: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+body.dark-theme .logo {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+body.dark-theme .admin-sidebar .menu {
+    color: #a5b4fc;
+    background: transparent;
+}
+
+body.dark-theme .admin-sidebar .menu:hover {
+    color: var(--color-primary);
+    background: rgba(56, 189, 248, 0.05);
+    box-shadow: inset 3px 0 0 var(--color-primary);
+}
+
+body.dark-theme .admin-sidebar .menu.active {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), transparent);
+    color: var(--color-primary);
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+    font-weight: 700;
+}
+
+body.dark-theme .admin-sidebar .sidebar-card {
+    background: linear-gradient(180deg, var(--color-primary-dark), #5c1899);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+    color: #fff;
+}
+
+body.dark-theme .admin-sidebar .sidebar-card p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .admin-sidebar .report-btn {
+    background: linear-gradient(135deg, var(--color-primary), #818cf8);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+body.dark-theme .admin-sidebar .report-btn:hover {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+}
+
+/* Mobile responsive drawer styling */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 100000;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4);
+    }
+
+    body.sidebar-active .admin-sidebar {
+        transform: translateX(0);
+    }
+
+    /* Backdrop overlay */
+    body.sidebar-active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 99999;
+        backdrop-filter: blur(4px);
+        animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
